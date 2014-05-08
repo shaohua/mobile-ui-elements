@@ -165,8 +165,8 @@
 
                 // Attach the template instance to the view
                 var template = templateInfo.template;
-                var templateModel = new SObjectViewModel(view.model, templateInfo.fieldInfos);
-                $(view.$.viewContainer).empty().append(template.createInstance(templateModel));
+                view.viewModel = new SObjectViewModel(view.model, templateInfo.fieldInfos);
+                $(view.$.viewContainer).empty().append(template.createInstance(view.viewModel));
             }
         };
 
